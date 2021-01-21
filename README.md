@@ -1,6 +1,9 @@
 # Freshchat Phonegap plugin
 (https://twitter.com/freshchatapp)
 
+NEW
+Freshchat SDK 4.2
+
 This plugin integrates Freshchat's SDK into a Phonegap/Cordova project.
 
 You can reach us anytime at support@freshchat.com if you run into trouble.
