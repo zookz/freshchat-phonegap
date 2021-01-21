@@ -26,7 +26,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v4.content.LocalBroadcastManager;
+import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import android.util.Log;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -115,7 +115,7 @@ public class freshchatPlugin extends CordovaPlugin {
         }
         return bundle;
      }
-    
+
     @Override
     public boolean execute(String action, JSONArray args,final CallbackContext callbackContext) throws JSONException {
 
@@ -291,7 +291,7 @@ public class freshchatPlugin extends CordovaPlugin {
                             else{
                                 callbackContext.error(freshchatCallbackStatus.toString());
                             }
-                                
+
                         }
                     });
                     return true;
@@ -311,12 +311,12 @@ public class freshchatPlugin extends CordovaPlugin {
                             else{
                                 callbackContext.error(freshchatCallbackStatus.toString());
                             }
-                                
+
                             }
                     },tagsList);
                     }
                     return true;
-                  
+
                 }
                 if(action.equals("unreadCountlistenerRegister")){
                     IntentFilter intentFilter = new IntentFilter(Freshchat.FRESHCHAT_UNREAD_MESSAGE_COUNT_CHANGED);
@@ -332,7 +332,7 @@ public class freshchatPlugin extends CordovaPlugin {
                         LocalBroadcastManager.getInstance(cordovaContext).unregisterReceiver(unreadCountChangeReceiver);
                         callbackContext.success("success");
                     }
-                    
+
                     return true;
                 }
 
@@ -399,7 +399,7 @@ public class freshchatPlugin extends CordovaPlugin {
                     if(resCallbackContext != null){
                         LocalBroadcastManager.getInstance(cordovaContext).unregisterReceiver(broadcastReceiver);
                     }
-                    
+
                     return true;
                 }
                 if (action.equals("identifyUser")) {
@@ -468,7 +468,7 @@ public class freshchatPlugin extends CordovaPlugin {
                     }
                     JSONObject jsonArgs = new JSONObject(args.getString(0));
                     FreshchatNotificationConfig notificationConfig = new FreshchatNotificationConfig();
-                    
+
                     if(jsonArgs.has("notificationSoundEnabled")) {
                         notificationConfig.setNotificationSoundEnabled(jsonArgs.getBoolean("notificationSoundEnabled"));
                     }
